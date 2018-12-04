@@ -1,0 +1,395 @@
+import random
+def monster_face():
+  print("          ....;;;;;;;....              ")
+  print("       ..',;;;:xxxx;;;;,,'..           ")
+  print("     .',:xxxxxxxxxxxxxxxx:;,'.         ")
+  print("   ..,:xxxxxxxxxxxxxxxxxxxxx:,..       ")
+  print("  ..;xxxxxxxxxxxxxxxxxxxxxxxxx;'.      ")
+  print("  .,xxxxxxxxxxxxxxxxxxxxxxxxxxx;..     ")
+  print(" .,xxxxxxxxxxxxxxxxxxxxxxxxxxxxx:,.    ")
+  print(".;xx;'.....,:xxxxxxxx;'.....';:;..     ")
+  print(".;x,. .'''. .:xxxxxx,...'''. .;:'.     ")
+  print(".;:,........':xxxxxx,.........,:,.     ")
+  print(".;:;,......';xxxxxxx:,.......';;,.     ")
+  print(".,:::;,,,,;:xxxxxxxxx:;,''',,;:;'.     ")
+  print(".,::::;;;:xxxxxxxxxxxxxx::;::::;'.     ")
+  print(".';:xxxxxxxxxxxxxxxxxxxxxxx::::;..     ")
+  print(".';:xxxxxxxxxxxxxxxxxxxxxxxxx::;'.     ")
+  print(".,;:xxxxxxxx;:.....;xxxxxxxx:;,..      ")
+  print("  ..,;xxxxxx:'      :xxxxxx;,'..       ")
+  print("  ..'xx::;'           ..,xx;,'..       ")
+  print("   ..''...             .....'..        ")
+  print("    .',,...            ...''..         ")
+  print("     .',;,'...      ,..',,'..          ")
+  print("      .';:;:;,'...;;,;;:::..           ")
+  print("       .';:xxxxx''xxxxxx:'.            ")
+  print("        ,..';xxxxxxxxxx:;..,           ")
+  print("       ,...:::;xxxxxx;::;,...,         ")
+  print("     .;;''''''''::::'''''''''';.       ")
+#starting game stats, more stats coming
+
+
+
+loc_input = 0 #zero to keep from instant room transition
+room_1 = 1 #room numbers are used to track player and monster movements and probably room layouts too
+room_2 = 2
+room_3 = 3
+room_4 = 4
+room_5 = 5
+room_6 = 6
+room_7 = 7
+room_8 = 8
+room_9 = 9
+room_10 = 10
+monster_loc = 6#to track the monster and help determine player death, and what rooms he can enter
+player_loc = 1#to track the player and determine what rooms he may enter
+print("Press the number of the room you are in to stay in that room!") #a tip for the player
+
+#intro here\/
+
+
+
+
+while True:
+#player movement
+#from room 9
+  if player_loc == room_9: #to determine what rooms the player may enter
+    loc_input = int(input("What room do you go into?[Master bedroom(10, Bloody room(8)]"))#telling players where they can go
+    print("")
+    if loc_input == room_10:#loc_input is used to prevent the player from teleporting to rooms across the house
+      print("You walk into the master bedroom...(10)")
+      player_loc = 10#officaly reassigns the location
+      print("")
+    elif loc_input == room_8:
+      print("You walk into the bloody room...(8)")
+      player_loc = 8
+      print("")
+    elif loc_input != 10 or loc_input != 8:
+      print("You dont leave the room")
+      print("")
+
+#from room 8 or 10
+  elif player_loc == room_8 or player_loc == room_10:
+    loc_input = int(input("What room do you go into?[bedroom(9), stair balcony(7)]"))
+    print("")
+    if loc_input == room_9:
+      print("You walk into the bedroom...(9)")
+      player_loc = 9
+      print("")
+    elif loc_input == room_7:
+      print("You walk over to the stair balcony...(7)")
+      player_loc = 7
+      print("")
+    elif loc_input != 9 or loc_input != 7:
+      print("You dont leave the room")
+      print("")
+
+#from room 7
+  elif player_loc == room_7:
+    loc_input = int(input("What room do you go into?(master bedroom(10), bloody room(8), main hall(1)]"))
+    print("")
+    if loc_input == room_10:
+      print("You walk into the master bedroom...(10)")
+      player_loc = 10
+      print("")
+    elif loc_input == room_8:
+      print("You walk into the bloody room...(8)")
+      player_loc = 8
+      print("")
+    elif loc_input == room_1:
+      print("You walk down the stairs...(1)")
+      player_loc = 1
+      print("")
+    elif loc_input != 10 or loc_input != 8 or loc_input != 1:
+      print("You dont leave the room")
+      print("")
+
+#from room 1, also the player starting position
+  elif player_loc == room_1:
+    loc_input = int(input("What room do you go into?[dining room(2), closet(3), kitchen(5), living room(6), stair balcony(7)]"))
+    print("")
+    if loc_input == room_2:
+      print("You walk into the dining room...(2)")
+      player_loc = 2
+      print("")
+    elif loc_input == room_3:
+      print("You walk into the closet...(3)")
+      player_loc = 3
+      print("")
+    elif loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = 5
+      print("")
+    elif loc_input == room_6:
+      print("You walk into the living room...(6)")
+      player_loc = 6
+      print("")
+    elif loc_input == room_7:
+      print("You walk up the stairs...(7)")
+      player_loc = 7
+      print("")
+    elif loc_input != 2 or loc_input != 3 or loc_input !=5 or loc_input != 6 or loc_input != 7:
+      print("You dont leave the room")
+      print("")
+
+#from room 2
+  elif player_loc == room_2:
+    loc_input = int(input("What room do you go into?[main hall(1), closet(3)]"))
+    print("")
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = 1
+      print("")
+    elif loc_input == room_3:
+      print("You walk into closet...(3)")
+      player_loc = 3
+      print("")
+    elif loc_input != 1 or loc_input != 3:
+      print("You dont leave the room")
+      print("")
+
+#from room 3
+  elif player_loc == room_3:
+    loc_input = int(input("What room do you go into?[main hall(1), dining room(2)]"))
+    print("")
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = 1
+      print("")
+    elif loc_input == room_2:
+      print("You walk into the dining room...(2)")
+      player_loc = 2
+      print("")
+    elif loc_input != 1 or loc_input != 2:
+      print("You dont leave the room")
+      print("")
+
+#from room 4, the player is purposely cornered so if the monster is in room 5 it teaches the player to wait and fully shows this mechanic
+  elif player_loc == room_4:
+    loc_input = int(input("Do you want to leave?[kitchen(5)]"))
+    print("")
+    if loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = 5
+      print("")
+    elif loc_input != 5:
+      print("You dont leave the room")
+      print("")
+
+#from room 5
+  elif player_loc == room_5:
+    loc_input = int(input("What room do you go into?[living room(6), main hall(1), washroom(4)]"))
+    print("")
+    if loc_input == room_6:
+      print("You walk into the living room...(6)")
+      player_loc = 6
+      print("")
+    elif loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = 1
+      print("")
+    elif loc_input == room_4:
+      print("You walk into the washroom...(4)")
+      player_loc = 4
+      print("")
+    elif loc_input != 6 or loc_input != 1 or loc_input != 4:
+      print("You dont leave the room")
+      print("")
+
+#player in room 6
+  elif player_loc == room_6:
+    loc_input = int(input("What room do you go into?[main hall(1), dining room(5)]"))
+    print("")
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = 1
+      print("")
+    elif loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = 5
+      print("")
+    elif loc_input != 1 or loc_input != 5:
+      print("You dont leave the room")
+      print("")
+
+#death check 1
+  if player_loc == monster_loc:
+    print("You walk into to room...and its there...then you are not")
+    monster_face()
+    print("The monster found you... GAME OVER!")
+    cont = input("Do you want to play again?[y,n]")
+    if cont == "Y" or cont == "y":
+      player_loc = 1#position reset
+      monster_loc = 6
+      continue
+    elif cont == "N" or cont == "n":
+      break
+
+  #room layouts and interactions go here\/
+
+
+
+
+
+#monster movement coding 
+#monster in room 9
+  if monster_loc == room_9:
+    monster_loc = random.choice([room_8,room_10,room_9])#chooses a random room for the monster
+    if monster_loc == room_8:
+      print("You hear some squelchy steps in the bloody room...(8)")#tells the player where the monster is 
+      print("")
+    elif monster_loc == room_10:
+      print("You hear footsteps in the master bedroom...(10)")
+      print("")
+    elif monster_loc == room_9:
+      print("The floorboards creak in the bedroom...(9)")
+      print("")
+
+#monster in room 10
+  elif monster_loc == room_10:
+    monster_loc = random.choice([room_9,room_7,room_10])
+    if monster_loc == room_9:
+      print("You hear a dresser get bumped in the bedroom...(9)")
+      print("")
+    elif monster_loc == room_7:
+      print("You hear footsteps at the stair balcony...(7)")
+      print("")
+    elif monster_loc == 10:
+      print("Theres movement coming from the master bedroom...(10)")
+      print("")
+
+#monster in room 8
+  elif monster_loc == room_8:
+    monster_loc = random.choice([room_9,room_7,room_8])
+    if monster_loc == room_9:
+      print("You hear a dresser get bumped in the bedroom...(9)")
+      print("")
+    elif monster_loc == room_7:
+      print("You hear footsteps at the stair balcony...(7)")
+      print("")
+    elif monster_loc == 8:
+      print("Theres more squelchy steps in the bloody room...(8)")
+      print("")
+    
+
+#monster in room 7
+  elif monster_loc == room_7:
+    monster_loc = random.choice([room_8,room_1,room_10,room_1,room_7])
+    if monster_loc == room_10:
+      print("You hear footsteps in the master bedroom...(10)")
+      print("")
+    elif monster_loc == room_8:
+      print("You hear some squelchy steps in the bloody room...(8)")
+      print("")
+    elif monster_loc == room_1:
+      print("You hear footsteps walking down the stairs...(1)")
+      print("")
+    elif monster_loc == room_7:
+      print("There's slow hesitant steps at the stair balcony...(7)")
+      print("")
+
+#monster in room 1
+  elif monster_loc == room_1:
+    monster_loc = random.choice([room_7,room_5,room_3,room_7,room_2,room_6,room_7,room_1])
+    if monster_loc == room_2:
+      print("You hear a chair get bumped in the dining room...(2)")
+      print("")
+    elif monster_loc == room_3:
+      print("You hear hangers rustling in the closet...(3)")
+      print("")
+    elif monster_loc == room_5:
+      print("The faucet turns on, then off in the kitchen...(5)")
+      print("")
+    elif monster_loc == room_6:
+      print("The floor on the living room creaks...(6)")
+      print("")
+    elif monster_loc == room_7:
+      print("There's footsteps going up the stairs...(7)")
+      print("")
+    elif monster_loc == room_1:
+      print("More footsteps echo through the halls...(1)")
+      print("")
+
+#monster in room 2
+  elif monster_loc == room_2:
+    monster_loc = random.choice([room_1,room_2, room_3])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_3:
+      print("You hear hangers rustling in the closet...(3)")
+      print("")
+    elif monster_loc == room_2:
+      print("Theres more footsteps in the dining room...(2)")
+      print("")
+
+#monster in room 3
+  elif monster_loc == room_3:
+    monster_loc = random.choice([room_1,room_2,room_3])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_2:
+      print("You hear a chair get bumped in the dining room...(2)")
+      print("")
+    elif monster_loc == room_3:
+      print("Theres a scraping sound coming from the closet...(3)")
+      print("")
+
+#monster in room 4
+  elif monster_loc == room_4:
+    monster_loc = random.choice([room_5,room_4,room_5])
+    if monster_loc == room_5:
+      print("The faucet turns on, then off in the kitchen...(5)")
+      print("")
+    elif monster_loc == room_4:
+      print("The sound of movement comes from the washroom...(4)")
+      print("")
+
+#monster in room 5
+  elif monster_loc == room_5:
+    monster_loc = random.choice([room_1,room_6,room_4,room_5])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_4:
+      print("You hear the door to the washroom open...(4)")
+      print("")
+    elif monster_loc == room_6:
+      print("The floor on the living room creaks...(6)")
+      print("")
+    elif monster_loc == room_5:
+      print("There's footsteps in the kitchen...(5)")
+      print("")
+
+#monster in room 6
+  elif monster_loc == room_6:
+    monster_loc = random.choice([room_1,room_5,room_6])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_5:
+      print("The faucet in the kitchen turns on, then off...(5)")
+      print("")
+    elif monster_loc == room_6:
+      print("There's the crunching of bones coming from the living room...(6)")
+      print("")
+
+
+#death check 2
+  if player_loc == monster_loc:
+    print("Then you turn around...and its right there...and you are dead!")
+    monster_face()
+    print("The monster found you... GAME OVER!")
+    player_loc = 1 #stat reset
+    monster_loc = 6
+    continue
+  elif player_loc != monster_loc:
+    continue
+
+  #exit conditions checked here\/
+
+
+
+#maze stats go here\/
+#maze loop starts here\/\/
