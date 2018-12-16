@@ -1,0 +1,36 @@
+import random
+import sys,time
+def print_slow(str):#define
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()#one at a time
+        time.sleep(0.07)#speed
+print("  |________-____________________--__________________-_____________-_____________________| ")
+print("  |                                                                                     | ")
+print("  /         ▄▀▀▀█▀▀▄  ▄▀▀▄ ▄▄   ▄▀▀█▄▄▄▄      ▄▀▀▀█▄    ▄▀▀█▄   ▄▀▀▀█▀▀▄  ▄▀▀█▄▄▄▄      | ")
+print(" |         █    █  ▐ █  █   ▄▀ ▐  ▄▀   ▐     █  ▄▀  ▀▄ ▐ ▄▀ ▀▄ █    █  ▐ ▐  ▄▀   ▐      \ ")
+print("  |        ▐   █     ▐  █▄▄▄█    █▄▄▄▄▄      ▐ █▄▄▄▄     █▄▄▄█ ▐   █       █▄▄▄▄▄       | ")
+print("  \           █         █   █    █    ▌       █    ▐    ▄▀   █    █        █    ▌       | ")
+print("  |         ▄▀         ▄▀  ▄▀   ▄▀▄▄▄▄        █        █   ▄▀   ▄▀        ▄▀▄▄▄▄        / ")
+print("  |        █          █   █     █    ▐       █         ▐   ▐   █          █    ▐        | ")
+print("   |       ▐          ▐   ▐     ▐            ▐                 ▐          ▐            | ")
+print("  |         ▄▀▀▀▀▄   ▄▀▀▀█▄        ▄▀▀▀▀▄    ▄▀▀█▀▄    ▄▀▀▄ ▀▄                         | ")
+print("  |        █      █ █  ▄▀  ▀▄     █         █   █  █  █  █ █ █                           | ")
+print("  |        █      █ ▐ █▄▄▄▄       █    ▀▄▄  ▐   █  ▐  ▐  █  ▀█                          | ")
+print("   |       ▀▄    ▄▀  █    ▐       █     █ █     █       █   █                           | ")
+print("  |          ▀▀▀▀    █            ▐▀▄▄▄▄▀ ▐  ▄▀▀▀▀▀▄  ▄▀   █                            \ ")
+print("  \                 █             ▐         █       █ █    ▐                             | ")
+print("  |                 ▐                       ▐       ▐ ▐                                 | ")
+print(" |                                                                                       | ")
+print("  |                             _ _ _ _ _ _ _ - _ _ - _                                 | ")
+print("  |                           _|Press ENTER To Continue|_                              /  ")
+print("  \                                                                                     | ")
+print("  |-------------------_-----------------------__-------------_--------------_-----------| ")
+a = input("")
+print_slow("....LOADING....      ")
+print_slow("                     ")
+print_slow("             ...DONE!")
+print("")
+print("")
+print("")
+print("")
