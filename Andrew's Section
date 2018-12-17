@@ -1,0 +1,77 @@
+
+#You are telling how those choices affect the rest of the game
+while True:
+  print("\nThese are your options. What would you like to do?")
+  choice = input("Do you want to: \n (Purchase a bus ticket)? \n (Stay at the bar?) \n (Go to the bus stop?) \n (Walk to the house?)\n")
+  choice = (choice[0])
+
+#This is what happens when you purchase a ticket
+  if choice.lower() == "p": 
+    print("You buy a ticket for $1.25. \nYou see a bus station.")
+    while True:
+      print("\nWhat do you want to do now?")
+      choice2nd = input(" (Go to the bus stop?) \n (Run back to the bar?)\n (Walk to the house?)\n")
+      choice2nd = (choice2nd[0])
+      #This is what hapeens when you  go to the bus stop after you've gotten a bus ticket
+      if choice2nd.lower() == "g":
+        print("You see a blue bench with a bus route sign\"Route 111\". \nYou sit down.\nYou wait for three minutues.")
+        print("A blue bus rolls up onto the bus stop. \nThe doors open.\nYou enter on to the bus. The bus driver stops you and asks\"Excuse me sir, where is your bus ticket?\" You show the bus driver your ticket. She says\"Thank you, welcome aboard bus 111. Our next stop Toms")
+        print("Not to long after, you see house after house zooming past your very eyes. Until the bus stops.")
+        print("You realize that now you have to walk to a the house but it's only one block away. \nAs you are walking, you feel one speck of water on your face. Then another. One after the other drop after drop It starts to rain hard.")
+        while True:
+          #Do you walk or run to the house
+          sideChoice = input("You've only got two options.\n (Run to house)\n Or\n (Walk but at the chance of you catching a cold.)\n")
+          sideChoice = (sideChoice[0])
+          #This is what happens when you run to the house
+          if sideChoice.lower() == "r":
+            print("You run, and fast. You run so fast that the rain feels like bullets crashing on your face.")
+            print("You can see this house of treasures that you've heard of all this time. It's just as desolate as the bartender told you.")
+            print("Whithout thinking twice, you hope the fence.")
+            print(" You've arived within the grasp of the house. You feel a great chill down your spine. You feel ungodly prezents.")
+            break
+          #Walk to the house
+          elif sideChoice.lower() == "w":
+            print("You've decide to walk in the rain. \nYou've caught a cold.\nBy the time that you've get to the front gate you keel over and die.")
+            print("GAME OVER")
+            #This is an Easter Egg
+            while True:
+              choice3rd = input(" ")
+              choice3rd = (choice3rd[0])
+              if choice3rd.lower() == "n":
+                print("Your corpse is struck by lightning. You hear a man ontop of a roof shout\"IT'S ALIVE\", next to you is a lisence that reads\nFRNKNSTN")
+                break
+              else:
+                break  
+            break
+          break
+        break
+      #This should lead you directly to the house
+      elif choice2nd.lower() == "r" :
+        print("You've gotten the bus ticket but you decide to go back to the bar and have another drink")
+      #You try walk to the house
+      elif choice2nd.lower() == "w" :
+        print("After you've gotten a bus ticket. You've decide to save the rest of your money but at the cost of time. You take one step from the front of the bar, then a second one, and then a thrid. You realize that eating all of those cheese burgers for lunch may not have been the best idea. You are not physically fit enough to make a hour long walk to a house full of treasures.")
+        continue
+
+#You stay at the bar.
+  elif choice.lower() == "s" :
+    print("You stay at the bar. \nUntil the bar closes. \nYou have little money. \nNo job. \nNo wife. \nNo kids. \nNo house. \nNo family. \nYou have hit rock bottom. \nYou have nothing. \nYou are nothing")
+    print("GAME OVER")
+    break
+
+#You go directly to the bus stop
+  elif choice.lower() == "g":
+    print("You walk outside the bar and see a blue bench with a bus sign. \nYou sit down.")
+    print("To your left is a list of times and when the bus comes.\n Finding out that this is the last ride of the day.\n You wait for three minutues.")
+    print("A blue bus rolls up onto the bus stop. \nThe doors open.\nYou enter on to the bus. The bus driver stops you and asks\"Excuse me sir, where is your bus ticket?\" You shrug your shoulders and the bus driver Spartan kicks you out of the bus, closes the doors,and drives away.\n You should have bought a bus ticket. ")
+    print("GAME OVER")
+    break
+
+#You walk directly to the bus stop
+  elif choice.lower() == ("w"):
+    print("You decide to save your money but at the cost of time. You take one step from the front of the bar, then a second one, and then a thrid. You realize that eating all of those cheese burgers for lunch may not have been the best idea. You are not physically fit enough to make a hour long walk to a house full of treasures.")
+    print("You shouldn't have eaten those Big Macs")
+    print("GAME OVER")
+    break
+  else: 
+    print("You have to type one of the options.")
