@@ -1,0 +1,63 @@
+#beginning text
+print("My name is James and this is the story of my terrible fate.")
+print("It was a day that was very familiar to me, I was on my way to 'The Spanking Donkey', my local pub. I had just been fired and I was ready to spend my last few dollars on as much liquor as I could down. The moment I opened the door to that pub was the moment my life changed forever.")
+
+#beginning of player interacion
+print("\n*You open the door and look around. you see a gruff looking bartender, a table full of dangerous looking bikers, and an old man twitching violently in the corner.*")
+
+#NPC interaction base
+
+NPCinteract = "0"
+stab = 0#stab number
+murdered = "0"
+
+#while true npc interaction
+while True:
+  if NPCinteract != "l" and NPCinteract != "i" and NPCinteract != "a" and NPCinteract != "n" and NPCinteract != "o" and NPCinteract != "y":
+    NPCinteract= input(str("\nWho would you like to talk to?\n Old man \n Bartender \n Bikers   \n(Enter your choice here)"))
+    NPCinteract= (NPCinteract[1])
+
+  if NPCinteract.lower() == "l":#old man
+    print("\nYou approach the old man and the closer you get the more he seems to twitch. You get directly next to him and he begins to scream ")
+    NPCinteract= input(str("\nWho would you like to talk to?\n Old man \n Bartender \n Bikers \n(Enter your choice here)"))
+    NPCinteract= (NPCinteract[1])
+
+  elif NPCinteract.lower() == "i":#bikers
+    print("\n They stare at you menacingly")
+    NPCinteract= input(str("\nWho would you like to talk to?\n Old man \n Bartender \n Bikers \n(Enter your choice here)"))
+    NPCinteract= (NPCinteract[1])
+    stab = stab + 1#stab
+    if stab >= 2:
+      print("\nThey stab you\n(Enter your choice here)")
+      murdered = input(str("\nwould you like to restart"))
+      if murdered  == "y" or murdered == "Y":
+        stab = 0
+        murdered = "0"
+        NPCinteract = "0"
+        continue
+      if murdered  == "N" or murdered == "n":
+        print("you suck you loser")
+  
+  elif NPCinteract.lower() == "a":#bartender
+    print("\n\"Hey james\", he says, \"you want the usual?\"")
+    #bartender dialogue
+    NPCinteract= input(str("\nYes \nNo \n(Enter your choice here)"))
+    NPCinteract= (NPCinteract[0])
+
+    if NPCinteract.lower() == "n":#no drink
+      print("\n\"Then what are you talking to me for?\"")
+      NPCinteract= input(str("\nWho would you like to talk to?\n Old man \n Bartender \n Bikers \n(Enter your choice here)"))
+      NPCinteract= (NPCinteract[1])
+
+    elif NPCinteract.lower() == "y":#yes drink
+      print("\n\"Here ya go, this one's on the house\"")
+      NPCinteract= input(str("\nWhat would you like to ask for?\n Work\n Leave\n(Enter your choice here)"))
+      NPCinteract= (NPCinteract[1])
+
+    if NPCinteract.lower() == "o":#work
+      print("\"I don't know about any work, but I have heard from that old man over there of a house a couple miles away. He came in screaming about some treasure hidden inside, you should go check it out.\"")
+
+    elif NPCinteract.lower() == "e":
+      continue
+    
+      
