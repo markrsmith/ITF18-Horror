@@ -109,8 +109,8 @@ print("")
 #intro here\/
 
 #beginning text
-print("My name is James and this is the story of my terrible fate. ")
-print("It was a day that was very familiar to me, I was on my way to \"The Spanking Donkey\", my local pub.")
+print_slow("My name is James and this is the story of my terrible fate. ")
+print_slow("It was a day that was very familiar to me, I was on my way to \"The Spanking Donkey\", my local pub.")
 print("")
 print("       _____________________________________            ")
 print("       |            ______________          \            ")
@@ -122,12 +122,13 @@ print("       |  |__|__|        _ _        |__|__|  |            ")
 print("       |                |.|.|                |            ")
 print("       |________________|_|_|________________|            ")
 print("")
-print("\nI had just been fired, divorced, and I was ready to spend my last few dollars on as much liquor as I could down. The moment I opened the door to that pub was the moment my life changed forever.")
+print_slow("\nI had just been fired, divorced, and I was ready to spend my last few dollars on as much liquor as I could down. The moment I opened the door to that pub was the moment my life changed forever.")
 print("")
 print("")
 print("")
 #beginning of player interacion
 print_slow("\nYou open the door and look around. you see the gruff looking bartender(your good freind william), a table full of dangerous looking thugs, and an old man twitching violently in the corner.")
+print("")
 
 #NPC interaction base
 
@@ -164,20 +165,20 @@ while True:
         
   elif NPCinteract.lower() == "b":#bartender
       print_slow("\n\"Hey james\", he says, \"you want the usual?\"")
+      NPCinteract = NPCinteract[0]
       #bartender dialogue
       NPCinteract= input(str("\nYes \nNo \n(Enter your choice here)"))
+      NPCinteract = NPCinteract[0]
       if NPCinteract == "":
         print("You dont talk to anyone")
         print("")
-        NPCinteract = "0"
-        NPCinteract = NPCinteract[0]
       elif NPCinteract.lower() == "n":
         print("\n\"Then what are you talking to me for?\"")
         NPCinteract = "0"
 
-      elif NPCinteract.lower() == "y" or  NPCinteract.lower() == "b":#yes drink
+      elif NPCinteract.lower() == "y":
         print_slow("\n\"Here ya go, this one's on the house, your favorite Applejuice\"")
-        print("you drink it in 3 seconds flat")
+        print("\nyou drink it in 3 seconds flat")
         print("")
         NPCinteract= input(str("\nWhat will you do? \n ask for work(ask) \n Leave bar \n nevermind \n(Enter your choice here)"))
         if NPCinteract == "":
@@ -391,9 +392,24 @@ while True:
   else: 
     print("You have to type one of the options.")
 print("")
+print("               ^                          ")
+print("             /   \                        ")
+print("            /     \                       ")
+print("           /_______\                      ")
+print("          /  _____  \         ^           ")
+print("         /   |_|_|   \      /   \          ")
+print("        /    |_|_|    \    / ___ \         ")
+print("       |_______________|  / |_|_| \        ")
+print("       |               | /  |_|_|  \       ")
+print("       |    _______    |/___________\      ")
+print("       |    |__|__|    |    _____   |      ")
+print("       |    |__|__|    |    |_|_|   |      ")
+print("       |       _       |    |_|_|   |      ")
+print("       |      | |      |            |      ")
+print("       |______|_|______|____________|      ")
+print("")
 print("You walk up to the house, its locked, its raining, and")
 print(" you will need a key to get in")
-print("")
 print("")
 print("")
 while True:#how you get into the house
