@@ -1,0 +1,1811 @@
+import random
+import sys,time
+def print_slow(str):#define
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()#one at a time
+        time.sleep(0.02)#speed
+def monster_face():
+  print("")
+  print("              ....;;;;;;;....              ")
+  print("           ..',;;;:xxxx;;;;,,'..           ")
+  print("         .',:xxxxxxxxxxxxxxxx:;,'.         ")
+  print("       ..,:xxxxxxxxxxxxxxxxxxxxx:,..       ")
+  print("      ..;xxxxxxxxxxxxxxxxxxxxxxxxx;'.      ")
+  print("      .,xxxxxxxxxxxxxxxxxxxxxxxxxxx;..     ")
+  print("     .,xxxxxxxxxxxxxxxxxxxxxxxxxxxxx:,.    ")
+  print("    .;xx;'.....,:xxxxxxxx;'.....';:;..     ")
+  print("    .;x,. .'''. .:xxxxxx,...'''. .;:'.     ")
+  print("    .;:,........':xxxxxx,.........,:,.     ")
+  print("    .;:;,......';xxxxxxx:,.......';;,.     ")
+  print("    .,:::;,,,,;:xxxxxxxxx:;,''',,;:;'.     ")
+  print("    .,::::;;;:xxxxxxxxxxxxxx::;::::;'.     ")
+  print("    .';:xxxxxxxxxxxxxxxxxxxxxxx::::;..     ")
+  print("    .';:xxxxxxxxxxxxxxxxxxxxxxxxx::;'.     ")
+  print("    .,;:xxxxxxxx;:.....;xxxxxxxx:;,..      ")
+  print("     ..,;xxxxxx:'        :xxxxxx;,'..      ")
+  print("      ..'xx::;'           ..,xx;,'..       ")
+  print("       ..''...             .....'..        ")
+  print("        .',,...            ...''..         ")
+  print("         .',;,'...      ,..',,'..          ")
+  print("          .';:;:;,'...;;,;;:::..           ")
+  print("           .';:xxxxx''xxxxxx:'.            ")
+  print("            ,..';xxxxxxxxxx:;..,           ")
+  print("           ,...:::;xxxxxx;::;,...,         ")
+  print("         .;;''''''''::::'''''''''';.       ")
+  print("")
+door = 0#seting a variable to all stats 
+rock = 0
+razor = 0
+option = "0"
+rock_option = "0"
+doll_option = "0"
+loc_input = 0 
+room_1 = "1" #room numbers are used to track player and monster movements and room layouts too
+room_2 = "2"
+room_3 = "3"
+room_4 = "4"
+room_5 = "5"
+room_6 = "6"
+room_7 = "7"
+room_8 = "8"
+room_9 = "9"
+room_10 = "10"
+#options
+option1 = "0"
+option2 = "0"
+option3 = "0"
+option4 = "0"
+option5 = "0"
+option6 = "0"
+option7 = "0"
+option8 = "0"
+option9 = "0"
+option10 = "0"
+#items
+box_code = random.randint(10000,99999)
+cup = 0
+quill = 0
+coin = 0
+knife = 0
+gear = 0
+fork = 0
+cutters = 0
+swatter = 0
+treasure = 0
+log = 0
+matches = 0
+fishhook = 0
+key_backdoor = 0
+key_locker = 0
+key_cabinet = 0
+key_box = 0
+key_drawer = 0
+barcontinue = 0
+monster_loc = "6"#to track the monster and help determine player death, and what rooms he can enter
+player_loc = "1"#to track the player and determine what rooms he may enter
+player_loc = str(player_loc)
+print("  |________-_______=____________--__________________-_____==______-__________/__________| ")
+print("  |                                                                                     | ")
+print("  /         ▄▀▀▀█▀▀▄  ▄▀▀▄ ▄▄   ▄▀▀█▄▄▄▄      ▄▀▀▀█▄    ▄▀▀█▄   ▄▀▀▀█▀▀▄  ▄▀▀█▄▄▄▄      | ")
+print(" |         █    █  ▐ █  █   ▄▀ ▐  ▄▀   ▐     █  ▄▀  ▀▄ ▐ ▄▀ ▀▄ █    █  ▐ ▐  ▄▀   ▐      \ ")
+print("  |        ▐   █     ▐  █▄▄▄█    █▄▄▄▄▄      ▐ █▄▄▄▄     █▄▄▄█ ▐   █       █▄▄▄▄▄       | ")
+print("  \           █         █   █    █    ▌       █    ▐    ▄▀   █    █        █    ▌       | ")
+print("  \          ▄▀        ▄▀  ▄▀   ▄▀▄▄▄▄        █         █   ▄▀   ▄▀        ▄▀▄▄▄▄       / ")
+print("  |         █          █   █     █    ▐       █         ▐   ▐   █          █    ▐       | ")
+print("   |        ▐          ▐   ▐     ▐            ▐                 ▐          ▐              ")
+print(" |                                                                                       | ")
+print("  |                                                                                     | ")
+print("  |                             _ _ _ _ _ _ _ - _ _ - _                                 | ")
+print("  /                           _|Press ENTER To Continue|_                              /  ")
+print("  \                                                                                     | ")
+print("  |------=-------------_-------------=--------__-------------_----------=---_-----------| ")
+a = input("")
+print_slow("....LOADING....                                                                ...DONE!")
+print("")
+print("")
+print("")
+print("")
+#intro here\/
+
+#beginning text
+print_slow("My name is James and this is the story of my terrible fate. ")
+print_slow("It was a day that was very familiar to me, I was on my way to \"The Spanking Donkey\", my local pub.")
+print("")
+print("       _____________________________________            ")
+print("       |            ______________          \            ")
+print("       |            |The SPANKING|           |            ")
+print("       |            |   Donkey   |           |            ")
+print("       |  _______   \____________/  _______  |            ")
+print("       |  |__|__|                   |__|__|  |            ")
+print("       |  |__|__|        _ _        |__|__|  |            ")
+print("       |                |.|.|                |            ")
+print("       |________________|_|_|________________|            ")
+print("")
+print_slow("\nI had just been fired, divorced, and I was ready to spend my last few dollars on as much liquor as I could down. The moment I opened the door to that pub was the moment my life changed forever.")
+print("")
+print("")
+print("")
+#beginning of player interacion
+print_slow("\nYou open the door and look around. you see the gruff looking bartender(your good freind william), a table full of dangerous looking thugs, and an old man twitching violently in the corner.")
+print("")
+
+#NPC interaction base
+
+NPCinteract = "0"
+stab = 0#stab number
+
+#while true npc interaction
+while True:
+  if NPCinteract != "b" and NPCinteract != "t" and NPCinteract != "o" and NPCinteract != "n" and NPCinteract != "w" and NPCinteract != "y":
+    NPCinteract= input(str("\nWho would you like to talk to?\n Old man \n Bartender \n Thugs \n(Enter your choice here)"))
+    if NPCinteract == "":
+      print("You dont talk to anyone")
+      print("")
+      NPCinteract = "0"
+    NPCinteract = NPCinteract[0]
+
+  elif NPCinteract.lower() == "o":#old man
+    print_slow("\nYou approach the old man and the closer you get the more he seems to twitch. You get directly next to him and he begins to scream ")
+    NPCinteract = "0"
+
+  elif NPCinteract.lower() == "t":#Thugs
+    print_slow("\n They stare at you menacingly")
+    print("")
+    NPCinteract = "0"
+    stab = stab + 1
+    if stab == 5:
+      print_slow("You get stabbed by the thugs because you keep annoying them.")
+      ("You died")
+      print("")
+      print_slow("but thats not how it ends, or you would'nt be alive right now")
+      barcontinue = 0
+      stab = 0
+      continue
+        
+  elif NPCinteract.lower() == "b":#bartender
+      print_slow("\n\"Hey james\", he says, \"you want the usual?\"")
+      NPCinteract = NPCinteract[0]
+      #bartender dialogue
+      NPCinteract= input(str("\nYes \nNo \n(Enter your choice here)"))
+      NPCinteract = NPCinteract[0]
+      if NPCinteract == "":
+        print("You dont talk to anyone")
+        print("")
+      elif NPCinteract.lower() == "n":
+        print("\n\"Then what are you talking to me for?\"")
+        NPCinteract = "0"
+
+      elif NPCinteract.lower() == "y":
+        print_slow("\n\"Here ya go, this one's on the house, your favorite Applejuice\"")
+        print("\nyou drink it in 3 seconds flat")
+        print("")
+        NPCinteract= input(str("\nWhat will you do? \n ask for work(ask) \n Leave bar \n nevermind \n(Enter your choice here)"))
+        if NPCinteract == "":
+          print("You dont touch anything")
+          print("")
+          NPCinteract = "0"
+        NPCinteract = NPCinteract[0]
+
+        if NPCinteract.lower() == "a":#work
+          print_slow("\"I don't know about any work, but I have heard from that old man over there of a house a couple miles away, \"166617 sucle St\" . He came in screaming about some \"old demon relics\", you should go check it out.\"")
+          print_slow("\n\"Maybe I will check it out\" you reply as you make your way out of the bar.")
+          break
+          print("")
+
+        elif NPCinteract.lower() == "l":#leave
+          print_slow("\"sorry will, but i gotta try to do somthing about the situation, or mayhaps ill come back later\" you say  ")
+          print_slow("\n\"See ya soon james\" he says")
+          print("")
+          print_slow("\nAs you walk out the old man has an outburst of yelling, something about \"166617 sucle St\" and \"demon relics\"")
+          print("")
+          print_slow("\nYou decide to check it out, hopefully get some cash off these \"relics\"")
+          print("")
+          print_slow("\nYou exit the bar ")
+          break
+
+        elif NPCinteract.lower != "a" or NPCinteract != "l":
+          print("")
+          print("You go to talk to other people")
+          NPCinteract = "0"
+          barcontinue = barcontinue + 1
+          continue
+
+print("")
+print("")
+while True:
+  print("\nThese are your options. What would you like to do?")
+  choice = input("Do you want to: \n (Purchase a bus ticket?) \n (Stay at the bar?) \n (Go to the bus stop?) \n (Walk to the house?)\n")
+  print("")
+  if choice == " ":#to help with answers
+    continue
+  elif choice != "":
+    print("")
+    choice = choice[0]
+ #This is what happens when you purchase a ticket
+  if choice.lower() == "p": 
+    print_slow("You buy a ticket for $1.25. \nYou see a bus station.")
+    print_slow("\nWhat do you want to do now?")
+    print("")
+    choice2nd = input(" (Go to the bus stop?)\n (Walk to the house?)\n")
+    if choice2nd == " ":#to help with answers
+      print("")
+      print("You go back")
+      continue
+    elif choice2nd != "":
+      print("")
+      choice2nd = choice2nd[0]
+    #This is what happens when you  go to the bus stop after you've gotten a bus ticket
+    if choice2nd.lower() == "g":
+      print_slow("You see a blue bench with a bus route sign \"Route 111\". \nYou sit down.\nYou wait for three minutues.")
+      print_slow(" A blue bus rolls up onto the bus stop. \nThe doors open.")
+      print("")
+      print("              _________________________________________________________________________")
+      print("              |     |ICAGO     DOWNTOWN CHICAGO    DOWNTOW|                           |")
+      print("              |_______________________________________________________________________|")
+      print("               /####|                     |    |    |     |    |    |    |    |    |  |")
+      print("              /#####|     __________      |---------|     |---------|    |---------|  |")
+      print("             /#   ##|     |   ||   |      |____|____|     |____|____|    |____|____|  |")
+      print("  \  _______/_______|     |   ||   |                                                  |")
+      print(" -- |_|                   |___||___|                                               ***|")
+      print("  / |    ********      ***|   ||   |****           **********     **********    ****  |")
+      print("    |*****     *********  |   ||   |   **************       *******        ******     |")
+      print("    |_____________________|___||___|__________________________________________________|")
+      print("         /         \                                     /         \  /         \      ")
+      print("         \   (o)   /                                     \   (o)   /  \   (o)   /      ")
+      print("          \_______/                                       \_______/    \_______/       ")
+      print("                                                                                       ")
+      print("\nYou enter on to the bus. The bus driver stops you and asks \"Excuse me sir, where is your bus ticket?\"  You show the bus driver your ticket.")
+      print(" She says \"Thank you, welcome aboard bus 111. Our next stop is downtown Chicago\"")
+      print("")
+      print("You see house after house zooming past your very eyes, then thick forest and brush. After while you see the house with the adress \"166617\". You tell the driver this is your stop and she lets you off.\n")
+      print("")
+      print("You realize that now you have to walk to a the house but it's not very far away. \nAs you are walking, you feel one speck of water on your face. Then another. One after the other drop after drop It starts to rain hard.")
+      print("")
+      #Do you walk or run to the house
+      sideChoice = input("You've only got two options.\n (Run to house)\n Or\n (Walk in the freezing rain.)\n")
+      if sideChoice == " ":#to help with answers
+        continue
+      elif sideChoice != "":
+        print("")
+        sideChoice = sideChoice[0]
+      #This is what happens when you run to the house
+      if sideChoice.lower() == "r":
+        print_slow("You run, and fast. You run so fast that the rain feels like bullets crashing on your face.")
+        print("")
+        print_slow("You can see the abandoned house that you've heard of all this time. ")
+        print("")
+        print_slow("Without thinking twice, you hop the fence, getting a cut on your arm.")
+        print("")
+        print_slow(" You've arived within the grasp of the house. You feel a great chill down your spine, a Demonic presence.")
+        break
+      #Walk to the house
+      elif sideChoice.lower() == "w":
+        print_slow("You've decide to walk in the rain. \nYou've caught a cold.\nBy the time that you've get to the front gate you keel over and die.")
+        print("GAME OVER")
+        print("")
+        game_over = input("Continue?")
+        print("")
+        if game_over == " ":#to help with answers
+          choice = "0"
+          sideChoice = "0"
+          choice2nd = "0"
+          continue
+          print("")
+        elif game_over != "":
+          print("")
+          game_over = game_over[0]
+        if game_over.lower() == "y":
+          choice = "0"
+          sideChoice = "0"
+          choice2nd = "0"
+          continue
+        elif game_over.lower() == "n":
+          exit()
+      print("")
+      #You try walk to the house
+    elif choice2nd.lower() == "w":
+      print_slow("You decide to save your money but at the cost of time. You take one step from the front of the bar, then a second one, and then a third. You realize that your neglect of exorcise may not have been the best idea. You are not physically fit enough to make a hour long walk to the abandoned house.")
+      print_slow("You faint of exhaustion")
+      print("GAME OVER")
+      print("")
+      game_over = input("Continue?")
+      if game_over == " ":#to help with answers
+        choice = "0"
+        sideChoice = "0"
+        choice2nd = "0"
+        continue
+      elif game_over != "":
+        print("")
+        game_over = game_over[0]
+      if game_over.lower() == "y":
+        choice = "0"
+        sideChoice = "0"
+        choice2nd = "0"
+        continue
+      elif game_over.lower() == "n":
+        exit()
+
+ #You stay at the bar.
+  elif choice.lower() == "s" :
+    print_slow("You stay at the bar. \nUntil the bar closes. \nYou have little money. \nNo job. \nNo wife. \nNo kids. \nNo house. \nNo family. \nYou have hit rock bottom. \nYou have nothing. \nYou ARE nothing")
+    print("GAME OVER")
+    print("")
+    game_over = input("Continue?")
+    if game_over == " ":#to help with answers
+      choice = "0"
+      sideChoice = "0"
+      choice2nd = "0"
+      continue
+    elif game_over != "":
+      print("")
+      game_over = game_over[0]
+    if game_over.lower() == "y":
+      choice = "0"
+      sideChoice = "0"
+      choice2nd = "0"
+      continue
+    elif game_over.lower() == "n":
+      exit()
+ #You go directly to the bus stop
+  elif choice.lower() == "g":
+    print_slow("You walk outside the bar and see a blue bench with a bus sign. \nYou sit down.")
+    print_slow("To your left is a list of times and when the bus comes.\n Finding out that this is the last ride of the day.\n You wait for three minutues.")
+    print_slow("A blue bus rolls up onto the bus stop. \nThe doors open.\nYou enter on to the bus. The bus driver stops you and asks\"Excuse me sir, where is your bus ticket?\" You shrug your shoulders and the bus driver Spartan kicks you out of the bus, closes the doors,and drives away.\n You should have bought a bus ticket. ")
+    print("GAME OVER")
+    print("")
+    game_over = input("Continue?")
+    if game_over == " ":#to help with answers
+      choice = "0"
+      sideChoice = "0"
+      choice2nd = "0"
+      continue
+    elif game_over != "":
+      print("")
+      game_over = game_over[0]
+    if game_over.lower() == "y":
+        choice = "0"
+        sideChoice = "0"
+        choice2nd = "0"
+        continue
+    elif game_over.lower() == "n":
+      exit()
+    continue
+    
+ #You walk
+  elif choice.lower() == ("w"):
+    print_slow("You decide to save your money but at the cost of time. You take one step from the front of the bar, then a second one, and then a third. You realize that your neglect of exorcise may not have been the best idea. You are not physically fit enough to make a hour long walk to the abandoned house.")
+    print_slow("You faint of exhaustion")
+    print("GAME OVER")
+    print("")
+    game_over = input("Continue?")
+    if game_over == " ":#to help with answers
+      continue
+    elif game_over != "":
+      print("")
+      game_over = game_over[0]
+    if game_over.lower() == "y":
+      continue
+    elif game_over.lower() == "n":
+      exit()
+    continue
+  else: 
+    print("You have to type one of the options.")
+print("")
+print("               ^                          ")
+print("             /   \                        ")
+print("            /     \                       ")
+print("           /_______\                      ")
+print("          /  _____  \         ^           ")
+print("         /   |_|_|   \      /   \          ")
+print("        /    |_|_|    \    / ___ \         ")
+print("       |_______________|  / |_|_| \        ")
+print("       |               | /  |_|_|  \       ")
+print("       |    _______    |/___________\      ")
+print("       |    |__|__|    |    _____   |      ")
+print("       |    |__|__|    |    |_|_|   |      ")
+print("       |       _       |    |_|_|   |      ")
+print("       |      | |      |            |      ")
+print("       |______|_|______|____________|      ")
+print("")
+print("You walk up to the house, its locked, its raining, and")
+print(" you will need a key to get in")
+print("")
+print("")
+while True:#how you get into the house
+  print("There are 4 things you should probably inspect")#item inspecting options
+  option = input("(Tree, Rock, Bush, Doll, Kick)")
+  if option == " ":#to help with answers
+    continue
+  elif option != "":
+    print("")
+    option = option[0]
+#tree
+  if option == "t" or option == "T":#determines what item to inspect
+    print("You see an acorn hanging from the tree, you could knock it down with a rock")
+    print("")
+    if rock == 1:
+      acorn = input("Do you want to throw the rock?(yes, no)")
+      if acorn != "":
+        print("")
+        acorn = acorn[0]
+        if acorn == "y" or acorn == "Y":
+          razor = 1#adding items by changing them to an on value
+          rock = 2#giving items a value worth less than 0
+          print("The acorn fell down and broke open with a razor inside, you grab the razor carefully")
+          print("")
+        elif acorn == "n" or acorn == "N":
+          print("You don't throw the rock ")
+          print("")
+      elif acorn == " ":
+        continue
+    elif rock == 0:
+      print("But you don't have a rock")
+      print("")
+    elif rock == 2:#if the player already completed the action
+      print("But you already knocked down the acorn")
+      print("")
+
+#rock
+  elif option == "r" or option == "R":
+    if rock_option == 2:
+      print("You already took the rock")
+      print("")
+    else:
+      print("Its just a normal rock, pick it up?")
+      rock_option = input("(yes, no)")
+      if rock_option == " ":#to help with awnsers
+        continue
+      elif rock_option != "":
+        print("")
+        rock_option = rock_option[0]
+        if rock_option == "Y" or rock_option == "y":
+          print("You picked up the rock")
+          print("")
+          rock = 1
+          rock_option = 2
+        elif rock_option != "Y" or rock_option != "y":
+          print("You leave it alone")
+          print("")
+          rock = 0
+
+#bush
+  elif option == "b" or option == "B":
+    print("An old dead rose bush...nothing unusual about it")
+    print("")
+
+#the doll
+  elif option == "d" or option == "D":
+    print("It's a doll, you have a sudden urge to cut it open...")
+    print("do so?")
+    doll_option = input("(yes, no)")
+    if doll_option == " ":#to help with awnsers
+      continue
+    elif doll_option != "":
+      doll_option = doll_option[0]
+    if doll_option == "Y" or doll_option == "y":
+        if razor == 1:
+          print("")
+          print_slow("You cut open the doll...and find a key!, which you take ")
+          print("")
+          print_slow("Afterwards you unlock the door and go inside...")
+          print("")
+          print("")
+          break
+        elif razor == 0:
+          print("you have nothing to cut it with")
+          print("")
+    elif doll_option == "N" or doll_option == "n":
+      print("You leave the doll alone")
+      print("")
+
+#kick the door
+  elif option == "k" or option == "K":#kicking easter egg
+    if door == 0:
+      print("You kick the door, nothing happens")
+      print("")
+    elif door >= 1 and door < 5:
+      print("You kick it again, still, nothing happens")
+      print("")
+    elif door == 5:
+      print("The door starts to cry")
+      print("")
+    elif door > 5 and door < 10:
+      print("The door is just crying more")
+      print("")
+    elif door >= 10 and door < 50:
+      print("Stop door abuse today...")
+      print("")
+    elif door >= 50 and door < 100:
+      print("The door screams in pain")
+    elif door == 100:#if the player 
+      print_slow("The door turns to dust from all the kicking, and your feet are swolen, but at least you got in...")
+      print_slow("After kicking down the door you walk inside and then the door reforms behind you, and you cannot open it")
+      break
+    door = door + 1 #adds a value to determine text output
+
+  continue
+  
+
+if door >= 100:
+  print("")
+elif door < 100:
+  print_slow("After you walk inside the door slams behind you! ")
+  print_slow("You try to open it but the door is seemingly locked again and the key dosent fit from this side! ")
+print_slow("After a while of trying to open the door you turn around to a long hall with an unseparated room at the end")
+print("")
+print_slow("Theres a squirrel eating an acorn at the end of the hall, it probobly got in through a window...and as you start to think of a way out a long, baleful white-gray three-fingered arm reaches out of the dark and grabs it!")
+print("")
+print("         _____________        ")
+print("        /-------------\       ")
+print("       |_/-----------\_|      ")
+print("       |***************|      ")
+print("       |***************|      ")
+print("       |*****       ___|      ")
+print("       |**      ___/ __|      ")
+print("       |*    __/___/  *|      ")
+print("       |    / / /    **|      ")
+print("       | /oo*      ****|      ")
+print("       |---------------|      ")
+print("       |---------------|      ")
+print("       |----------_____|      ")
+print("       |----------|____|      ")
+print("       |----------|____|      ")
+print("       |----------|____|      ")
+print("       |----------|____|      ")
+print("       |----- !! -|____|      ")
+print("       |---- (00)  ----|      ")
+print("       |---  /||\   ---|      ")
+print("       |--   _||_    --|      ")
+print("       |---  |  |   ---|      ")
+print("       |-----     -----|      ")
+print("       |---------------|      ")
+print("       |_______________|      ")
+print("")
+
+print_slow("The squirrel screams as you hear its bones break and its skin get torn off like velcro, looks like you should hide quickly!!!\n")
+print_slow("You hear the crunching of bones from the living room...(6)")
+print("")
+
+while True:
+#player movement
+#from room 9
+  if player_loc == room_9: #to determine what rooms the player may enter
+    loc_input = str(input("What room do you go into?[Master bedroom(10), Bloody room(8), stay(9)]"))#telling players where they can go
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_10:#loc_input is used to prevent the player from teleporting to rooms across the house
+      print("You walk into the master bedroom...(10)")
+      player_loc = "10"#officaly reassigns the location
+      print("")
+    elif loc_input == room_8:
+      print("You walk into the bloody room...(8)")
+      player_loc = "8"
+      print("")
+    elif loc_input != "10" or loc_input != "8":
+      print("You dont leave the room")
+      print("")
+
+#from room 8 or 10
+  elif player_loc == room_8 or player_loc == room_10:
+    loc_input = str(input("What room do you go into?[bedroom(9), stair balcony(7), stay(" + player_loc + ")]"))
+    if loc_input == " ":
+      print("You stay")
+      continue
+    elif loc_input != "":
+      print("")
+      player_loc = str(player_loc)
+    if loc_input == room_9:
+      print("You walk into the bedroom...(9)")
+      player_loc = "9"
+      print("")
+    elif loc_input == room_7:
+      print("You walk over to the stair balcony...(7)")
+      player_loc = "7"
+      print("")
+    elif loc_input != room_9 or loc_input != room_7:
+      print("You dont leave the room")
+      print("")
+
+#from room 7
+  elif player_loc == room_7:
+    loc_input = str(input("What room do you go into?(master bedroom(10), bloody room(8), main hall(1), stay(7)] "))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_10:
+      print("You walk into the master bedroom...(10)")
+      player_loc = "10"
+      print("")
+    elif loc_input == room_8:
+      print("You walk into the bloody room...(8)")
+      player_loc = "8"
+      print("")
+    elif loc_input == room_1:
+      print("You walk down the stairs...(1)")
+      player_loc = "1"
+      print("")
+    elif loc_input != 10 or loc_input != 8 or loc_input != 1:
+      print("You dont leave the room")
+      print("")
+
+#from room 1, also the player starting position
+  elif player_loc == room_1:
+    loc_input = str(input("What room do you go into?[dining room(2), closet(3), kitchen(5), living room(6), stair balcony(7), stay(1)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_2:
+      print("You walk into the dining room...(2)")
+      player_loc = "2"
+      print("")
+    elif loc_input == room_3:
+      print("You walk into the closet...(3)")
+      player_loc = "3"
+      print("")
+    elif loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = "5"
+      print("")
+    elif loc_input == room_6:
+      print("You walk into the living room...(6)")
+      player_loc = "6"
+      print("")
+    elif loc_input == room_7:
+      print("You walk up the stairs...(7)")
+      player_loc = "7"
+      print("")
+    elif loc_input != 2 or loc_input != 3 or loc_input !=5 or loc_input != 6 or loc_input != 7:
+      print("You dont leave the room")
+      print("")
+
+#from room 2
+  elif player_loc == room_2:
+    loc_input = str(input("What room do you go into?[main hall(1), closet(3), stay(2)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = "1"
+      print("")
+    elif loc_input == room_3:
+      print("You walk into closet...(3)")
+      player_loc = "3"
+      print("")
+    elif loc_input != 1 or loc_input != 3:
+      print("You dont leave the room")
+      print("")
+
+#from room 3
+  elif player_loc == room_3:
+    loc_input = str(input("What room do you go into?[main hall(1), dining room(2), stay(3)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = "1"
+      print("")
+    elif loc_input == room_2:
+      print("You walk into the dining room...(2)")
+      player_loc = "2"
+      print("")
+    elif loc_input != 1 or loc_input != 2:
+      print("You dont leave the room")
+      print("")
+
+#from room 4, the player is purposely cornered so if the monster is in room 5 it teaches the player to wait 
+  elif player_loc == room_4:
+    loc_input = str(input("Leave or stay?[kitchen(5), stay(4)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = "5"
+      print("")
+    elif loc_input != 5:
+      print("You dont leave the room")
+      print("")
+
+#from room 5
+  elif player_loc == room_5:
+    loc_input = str(input("What room do you go into?[living room(6), main hall(1), washroom(4), stay(5)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_6:
+      print("You walk into the living room...(6)")
+      player_loc = "6"
+      print("")
+    elif loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = "1"
+      print("")
+    elif loc_input == room_4:
+      print("You walk into the washroom...(4)")
+      player_loc = "4"
+      print("")
+    elif loc_input != 6 or loc_input != 1 or loc_input != 4:
+      print("You dont leave the room")
+      print("")
+
+#player in room 6
+  elif player_loc == room_6:
+    loc_input = str(input("What room do you go into?[main hall(1), kitchen(5), stay(6)]"))
+    if loc_input == " ":#to help with answers
+      print("You stay")
+      continue
+    elif loc_input != "":
+      player_loc = str(player_loc)
+    if loc_input == room_1:
+      print("You walk into the main hall...(1)")
+      player_loc = "1"
+      print("")
+    elif loc_input == room_5:
+      print("You walk into the kitchen...(5)")
+      player_loc = "5"
+      print("")
+    elif loc_input != 1 or loc_input != 5:
+      print("You dont leave the room")
+      print("")
+
+#death check 1
+  if player_loc == monster_loc:
+    print_slow("You walk into the room...and its there...then you are not")
+    print("")
+    monster_face()
+    print("The monster found you... GAME OVER!")
+    player_loc = "1" #position reset
+    monster_loc = "6"
+    cup = 0
+    quill = 0
+    coin = 0
+    knife = 0
+    gear = 0
+    fork = 0
+    cutters = 0
+    swatter = 0
+    treasure = 0
+    log = 0
+    matches = 0
+    fishhook = 0
+    key_backdoor = 0
+    key_locker = 0
+    key_cabinet = 0
+    key_box = 0
+    key_drawer = 0
+    print("")
+    print_slow("You feel sense coming back to you as the loop is inverted and you walk in through the front door...")
+    print("")
+    continue
+
+#room layouts and interactions go here\/
+
+#if player is in room 1 interactions
+  if player_loc == room_1:
+    print("Theres a small area at the end with a fireplace and backdoor!")
+    print("")
+    option1 = input("What do you want to interact with?(fireplace, backdoor, Nothing) ")
+    print("")
+    #start no unput check
+    if option1 == "":
+      print("You dont touch anything")
+      print("")
+      option1 = "0"
+    option1 = option1[0]
+    #end no input check
+    if option1 == "b" or option1 == "B":
+      print("Sadly the backdoor is Locked, Boarded, Chained, and Gaurded by a small Spider!")
+      print("")
+      if fork == 1 or key_backdoor == 1 or cutters == 1 or swatter == 1:
+        print("Your items can be used on this door")
+        print("")
+        if fork == 1:
+          print("Fork")
+        if key_backdoor == 1:
+          print("Key(backdoor)")
+        if cutters == 1:
+          print("Chain Cutters")
+        if swatter == 1:
+          print("Swatter")
+        print("")
+        backdoor = input("Wich one?")
+        print("")
+        #no input check
+        if backdoor == "":
+          print("You leave the door alone")
+          print("")
+        backdoor = backdoor[0]
+        #fork
+        if fork == 1 and backdoor == "f" or backdoor == "F":
+          print("You use the fork to pry the nails off the boards, then you pull of the boards one by one and set them next to the door, but you ate the fork")
+          print("")
+          fork = 2
+        #key
+        elif key_backdoor == 1 and backdoor == "k" or backdoor == "K" :
+          print("The key fits right into the hole and the door unlocks with a moan...and the key wont pull out")
+          print("")
+          key_backdoor = 2
+        #cutters
+        elif cutters == 1 and backdoor == "c" or backdoor == "C":
+          print("The cutters *snap* the chain in half clearing the doorway, but a piece of  chain got stuck in the cutters, so they dont work anymore")
+          print("")
+          cutters = 2
+        #swatter
+        elif swatter == 1 and backdoor == "s" or backdoor == "S":
+          print("You swat the little spider off the doorhandle and its dead corpse kinda  gives you a sad look...so you break the fly swatter in vengence")
+          print("")
+          swatter = 2
+        option1 = "0"
+      else:
+        print("You have nothing to use on the door")
+    #fireplace
+    elif option1 == "F" or option1 == "f":
+        print("A fireplace sits aginst the wall, you could use some matches to burn somthing")
+        print("")
+        if log == 1 and matches == 0:
+          print("You have a log but nothing to burn it with")
+          print("")
+        elif log == 0 and matches == 1:
+          print("You got matches, if only you had somthing to burn")
+          print("")
+        elif log != 1 and matches != 1:
+          print("You dont have anything to make a fire with")
+          print("")
+        elif log == 1 and matches == 1:
+          print("The log fits into the fireplace perfectly and the matches light it right up")
+          print("After agressive burning you dust away the ashes to find a key to the backdoor")
+          print("")
+          log = 2
+          matches = 2
+          key_backdoor = 1
+        option1 = "0"
+    #player does nothing
+    elif option1 == "n" or option1 == "N":
+      print("You dont touch anything")
+      print("")
+      option1 = "0"
+
+
+#player interactions in room 2
+  elif player_loc == room_2:
+    print("There is a sketch on the table, and an empty cabinet with with a locked drawer underneath")
+    print("")
+    option2 = input("What do you want to interact with?(sketch, drawer, nothing) ")
+    print("")
+    if option2 == "":
+      print("You dont touch anything")
+      print("")
+      option2 = "0"
+    option2 = option2[0]
+    if option2 == "s" or option2 == "S":
+      print("You look over the sketch, it seems to be a map of the house")
+      print("")
+      #Map of the first floor
+      print("...The first floor...")
+      print("   __  _____________________________   ")
+      print("  /                 |               \  ")
+      print("  |      Main           Living       | ")
+      print("  |      Hall(1)    |     Room      /  ")
+      print("  |____________     \__   (6)      |   ")
+      print("     |         \      |_____  _____|   ")
+      print("  ___| Closet(3)|                  |   ")
+      print("  |   \_  ______     _| Kitchen(5)/    ")
+      print("  |             |   |_|_____  ____|    ")
+      print("  |             |   |_|           |    ")
+      print("  |DiningRoom(2)      |Bathroom(4)|    ")
+      print("  \_____________|_   _|___________/    ")
+      print("")
+      #map of the second floor
+      print("...The second floor...")
+      print("         ______________________  ")
+      print("        /      |  ",box_code,"      \ ")
+      print("       |               Master   |")
+      print("        \      |      Bedroom  / ")
+      print("    _____|     |_       (10)   | ")
+      print("   /             |            _| ")
+      print("   |   Bedroom(9)|            |  ")
+      print("   |_  __________|_________  _|  ")
+      print("   |                  Stair   |  ")
+      print("   |   Blood      | Balcony(7)|  ")
+      print("   |   Room(8)    |_______ _ /|  ")
+      print("    \_____________|       |_| |  ")
+      print("")
+      option2 = "0"
+    #flyswatter aquriement
+    if option2 == "d" or option2 == "D":
+      print("one of the drawers is locked")
+      print("")
+      if key_drawer == 1:
+        option2 = input("You have the key, unlock it?(yes, no)")
+        print("")
+        if option2 == "":     
+          print("You dont touch anything")
+          print("")
+          option2 = "0"
+        option2 = option2[0]
+        if option2 == "y" or option2 == "Y":
+          if swatter == 0:
+            print("Unlocking the drawer you find a flyswatter, you take it")
+            print("")
+            swatter = 1
+            key_drawer = 2
+      elif key_drawer == 2:
+        print("You already unlocked it, the drawer is empty")
+        print("")
+    elif option2 == "n" or option2 == "N":
+      print("You dont mess with anything")
+      print("")
+
+
+#interactions in room 3
+  elif player_loc == room_3:
+    print("In the closet is a coat with an empty pack of cigarettes and some matches")
+    print("")
+    option3 = input("What do you interact with?(cigarettes, matches, nothing) ")
+    print("")
+    if option3 == "":     
+      print("You dont touch anything")
+      print("")
+      option3 = "0"
+    option3 = option3[0]
+    if option3 == "M" or option3 == "m":
+      if matches == 0:
+        option3 = input("Do you take the matches?(yes, no)")
+        print("")
+        if option3 == "":     
+          print("You dont touch anything")
+          print("")
+          option3 = "0"
+        option3 = option3[0]
+        if option3 == "Y" or option3 == "y":
+          print("You take the box of matches")
+          print("")
+          matches = 1
+        elif option3 == "n" or option3 == "N":
+          print("Nevermind")
+          print("")
+      elif matches == 1 or matches == 2:
+        print("You already took the box of matches")
+        print("")
+    elif option3 == "c" or option3 == "C":
+      print("You look at the empty pack of cigarettes, you arn't very hungry...")
+      print("")
+    elif option3 == "n" or option3 == "N":
+      print("You dont touch anything")
+      print("")
+
+
+#room4 interactions
+  elif player_loc == room_4:
+    print("You look around and see a bucket for washing cloths, a bathtub, and a sink")
+    print("")
+    option4 = input("what do you interact with?(Washer, Bath, Sink, nothing) ")
+    print("")
+    if option4 == "":     
+      print("You dont touch anything")
+      option4 = "0"
+    option4 = option4[0]
+    #washer
+    if option4 == "w" or option4 == "W":
+      print("The water in the bucket is slightly dirty, but you could still wash something in this")
+      print("")
+      if gear == 1:
+        option4 == input("You have a dirty gear, wash it?(yes, no)")
+        print("")
+        if option4 == "":     
+          print("You dont touch anything")
+          option3 = "0"
+        option4 = option4[0]
+        if option4 == "Y" or option4 == "y":
+          print("You wash the dirty gear in the water, its free of dirt and grime")
+          print("")
+          gear == 2
+        elif option4 == "n" or option4 == "N":
+          print("You dont wash the gear")
+      elif gear == 0 or gear == 2 or gear == 3:
+        print("But you have nothing to wash")
+      #sink
+    elif option4 == "s" or option4 == "S":
+      print("A sink sits against the wall, you could probably fish something out with hook")
+      print("")
+      if fishhook == 1:
+        option4 = input("You have a hook that could fish out somthing, use it?(yes, no)")
+        print("")
+        if option4 == "":     
+          print("You dont touch anything")
+          print("")
+          option3 = "0"
+        option4 = option4[0]
+        if option4 == "Y" or option4 == "y":
+          print("After a few trys it hooks onto a cabinet key")
+          print("")
+          key_cabinet = 1
+          fishhook = 2
+        elif option4 == "N" or option4 == "n":
+          print("You dont use the hook")
+          print("")
+      elif fishhook == 0 or fishhook == 2:
+        print("You have nothing to fish With") 
+        print("")
+    #bath
+    elif option4 == "B" or option4 == "b":
+      print("The bathtub has blood in it...gross")
+      print("")
+    elif option4 == "n" or option4 == "N":
+      print("You dont touch anything")
+      print("")
+
+
+#interactions in room 5
+  elif player_loc == room_5:
+    print("The kitchen has back and white tiles, with an icebox, some cabinets, and a furnace")
+    print("")
+    option5 = input("What do interact with?(icebox, furnace, cabinets, nothing) ")
+    print("")
+    if option5 == "":     
+      print("You dont touch anything")
+      print("")
+      option5 = "0"
+    option5 = option5[0]
+    if option5 == "F" or option5 == "f":
+      print("The furnace door is rusted shut, and a pot of black liquid sit on top of the burner")
+      option5 = input("...Reach in...?(yes, no) ")
+      print("")
+      if option5 == "":     
+        print("You dont reach in")
+        print("")
+        option5 = "0"
+      option5 = option5[0]
+      if option5 == "y" or option5 == "Y":
+        print("...You reach in, and after a while of digging around you feel a metal thing, pulling it out you see that its a key for a box")
+        print("")
+        key_box = 1
+      elif option5 == "n" or option5 == "N":
+        print("Using common sense you dont reach in")
+        print("")
+    #cabinet
+    if option5 == "c" or option5 == "C":
+      print("There are three locked capinets, all the locks are rusted over except for the left one")
+      print("")
+      if key_cabinet == 1:
+        option5 = input("You can unlock it, do so?(yes, no)")
+        print("")
+        if option5 == "":     
+          print("You dont touch anything")
+          print("")
+          option5 = "0"
+        option5 = option5[0]
+        if option5 == "Y" or option5 == "y":
+          print("You unlock the cabinet and find a some spoons and a fork, you take the fork")
+          print("")
+          fork = 1
+        elif option5 == "N" or option5 == "n":
+          print("You decide not to unlock the cabinet")
+          print("")
+      elif key_cabinet == 0:
+        print("You dont have the key for it")
+        print("")
+      elif key_cabinet == 2:
+        print("You already unlocked the cabinet")
+        print("")
+    elif option5 == "i" or option5 == "I":
+      print("The icebox is empty except for a single piece of ice staring back at you...")
+      print("")
+    elif option5 == "n" or option5 == "N":
+      print("You dont touch anything")
+      print("")
+
+
+#player interactions in room 6
+  elif player_loc == room_6:
+    print("In the family room is the corpse of a squirrel, a clock, and a log on a firewood  holder")
+    print("")
+    option6 = input("What do you look at?(log, clock, squirrel, nothing) ")
+    print("")
+    if option6 == "":     
+      print("You dont touch anything")
+      print("")
+      option6 = "0"
+    option6 = option6[0]
+    #squirrel
+    if option6 == "s" or option6 == "S":
+      if knife == 0 or key_drawer == 1 or key_drawer == 2:
+        print("The squirrels body is mangled into a lump of meat, poor guy, i hope you dont end up that way...")
+        print("")
+      elif knife == 1 and key_drawer == 0:
+        print("The squirrels body is mangled into a lump of meat, and in the meat you see something bulging out")
+        print("")
+        option6 = input("You could cut it out with your knife, do so?(yes, no) ")
+        print("")
+        if option6 == "":     
+          print("You dont cut it open")
+          print("")
+          option6 = "0"
+        option6 = option6[0]
+        if option6 == "Y" or option6 == "y":
+          print("You dig the knife into its guts to pull out a key to a drawer...")
+          print("")
+          key_drawer = 1
+        elif option6 == "N" or option6 == "n":
+          print("You decide not to cut it open")
+          print("")
+    #clock
+    elif option6 == "c" or option6 == "C":
+      print("Its an old clock missing a gear, you should put one in")
+      print("")
+      if gear == 0:
+        print("You dont have a gear to put in")
+        print("")
+      elif gear == 1:
+        print("But though you have a gear, it is to dirty and grimey to fit into place")
+        print("")
+      elif gear == 2:
+        print("The gear is clean and able to fit into its place")
+        print("")
+        option6 = input("Put it in?(yes, no) ")
+        print("")
+        if option6 == "":     
+          print("You dont touch anything")
+          print("")
+          option6 = "0"
+        option6 = option6[0]
+        if option6 == "Y" or option6 == "y":
+          print("The gear fits right into place and after winding the clock the gears turn, suddenly the clock chimes as a small door opens with a key to a locker inside")
+          print("")
+          key_locker = 1
+          gear = 3
+        elif option6 == "N" or option6 == "n":
+          print("You dont put in the gear")
+          print("")
+      elif gear == 3:
+        print("You already put the gear in, the clock ticks silently")
+        print("")
+    #log
+    elif option6 == "l" or option6 == "L":
+      if log == 0:
+        print("The log sits on a log rack")
+        print("")
+        option6 = input("Take it?")
+        print("")
+        if option6 == "":    
+          print("You dont touch anything")
+          print("")
+          option6 = "0"
+        option6 = option6[0]
+        if option6 == "y" or option6 == "Y":
+          print("You take the log")
+          print("")
+          log = 1
+        elif option6 == "n" or option6 == "N":
+          print("You dont take the log")
+      elif log == 1 or log == 2:
+        print("You already took the log")
+        print("")
+    elif option3 == "n" or option3 == "N":
+      print("You dont touch anything")
+      print("")
+
+
+#if player is in room 7 interactions
+  elif player_loc == room_7:
+    print("From the balcony you can see the main hall, and at the balcony is a flowerpot, and a crack in the wall")
+    print("")
+    option7 = input("what do you interact with(plant, crack, nothing) ")
+    print("")
+    if option7 == "":     
+      print("You dont touch anything")
+      print("")
+      option7 = "0"
+    option7 = option7[0]
+    if option7 == "p" or option7 == "P":
+      if gear == 0:
+        print("Apon inspecting the plant you find a metal item burried in the soil")
+        print("")
+        option7 = input("Take it?(yes, no)")
+        print("")
+        if option7 == "":     
+          print("You dont touch anything")
+          print("")
+          option7 = "0"
+        option7 = option7[0]
+        if option7 == "Y" or option7 == "y":
+          print("You pull the object out of the soil, its a dirty gear, could use some  cleaning")
+          print("")
+          gear = 1
+        elif option7 == "N" or option7 == "n":
+          print("You dont take the metal item")
+          print("")
+      elif gear == 1 or gear == 2 or gear == 3:
+        print("Theres nothing in the pot")
+        print("")
+    elif option7 == "c" or option7 == "C":
+      print("You look into the crack")
+      print("")
+      if option7 == "c":
+        print("Just darkness")
+        print("")
+      elif option7 == "C":
+        print("")
+        print("           __.-----._")
+        print("         (`--'       `-.")
+        print("          `.______      `.")
+        print("       ___________`__     \ ")
+        print("    ,-'           `-.\     |")
+        print("   //                \|    |\ ")
+        print("  (`  .'~~~~~---\     \'   | |")
+        print("   `-'           )     \   | |")
+        print("      ,---------' - -.  `  . '")
+        print("    ,'             ` `\`     |")
+        print("   /                      \  |")
+        print("  /     \-----.         \    `")
+        print(" /|  ,_/      '-._            |")
+        print("(-'  /           /            ` ")    
+        print(",`--<           |              \ ")
+        print("\ |  \         /               `\ ")
+        print(" |/   \____---'--`               \ ")
+        print(" |    '           `               \ ")
+        print(" |")
+        print("  `--.__")
+        print("        `---._______")
+        print("                    `.")
+        print("                      \ ")
+        print("")
+        print_slow("caught ya lackin")
+        print("")
+        print("like are you really using uppercase? its not like this game is mean for quality like that...")
+        print("")
+    elif option3 == "n" or option3 == "N":
+      print("You dont touch anything")
+      print("")
+
+
+#player interactions in room 8
+  elif player_loc == room_8:
+    print("The room is full of blood, with a pentagram, a metal locker, and a corpse cuffed to the wall")
+    print("")
+    option8 = input("What do you interact with?(Corpse, pentagram, locker, nothing) ")
+    print("")
+    if option8 == "":     
+      print("You dont touch anything")
+      print("")
+      option8 = "0"
+    option8 = option8[0]
+    if option8 == "L" or option8 == "l":
+      if key_locker == 1 or key_locker == 0:
+        print("The locker is, surprisingly, locked")
+        print("")
+        if key_locker == 0:
+          print("But you dont have the key for it")
+          print("")
+        elif key_locker == 1:
+          print("You have the key for the locker")
+          print("")
+          option8 = input("Unlock the locked locker?(yes, no) ")
+          if option8 == "":     
+            print("You dont unlock it")
+            print("")
+            option8 = "0"
+          option8 = option8[0]
+          if option8 == "y" or option8 == "Y":
+            print("The key fits in easilly, and inside are bloody chain cutters, you take them")
+            cutters = 1
+            key_locker = 2
+          elif option8 == "N" or option8 == "n":
+            print("You decide not to unlock it")
+      elif key_locker == 2:
+        print("The locker is unlocked, but there is nothing else in the locker")
+        print("")
+    elif option8 == "c" or option8 == "C":
+      if knife == 1 or knife == 2:
+        print("The corpse stares at you")
+        print("")
+      elif knife == 0:
+        print("The corpse seems to stare at you, and it has a knife stuck into itself")
+        print("")
+        option8 = input("...Take it? ")
+        print("")
+        if option8 == "":     
+          print("You dont take it")
+          print("")
+          option8 = "0"
+        option8 = option8[0]
+        if knife == 0:
+          if option8 == "y" or option8 == "Y":
+            print("You pull the knife out of the corpse...")
+            print("")
+            knife = 1
+          elif option8 == "N" or option8 == "n":
+            print("You leave the knife alone")
+            print("")
+        elif knife == 1 or knife == 2:
+          print("The knife is already taken")
+          print("")
+    elif option8 == "P" or option8 == "p":
+      print("The pentagram, surrounded in meat candles, glows ominously...")
+      print("")
+
+
+#interactions in room 9
+  elif player_loc == room_9:
+    print("The bedroom is almost completely empty except for a bed, a table, and a cup")
+    print("")
+    option9 = input("What do you interact with?(bed, table, cup, nothing) ")
+    print("")
+    if option9 == "":     
+      print("You dont touch anything")
+      print("")
+      option9 = "0"
+    option9 = option9[0]
+    #bed
+    if option9 == "B" or option9 == "b":
+      print("You look under the pillow, if you were a kid you could hide anything under here")
+      print("")
+    #table
+    elif option9 == "t" or option9 == "T":
+      print("On the table is a hole, and a scale weighted with a welded piece of iron on the left side")
+      print("")
+      if cup == 1 or quill == 1:
+        if cup == 1 and quill == 1:
+          print("You can put the quill in the hole and the cup on the scale,")
+          print("")
+        elif cup == 1 and quill != 1:
+          print("You can put the cup on the scale,")
+          print("")
+        elif quill == 1 and cup != 1:
+          print("You can put the quill into the hole")
+        option9 = input("do so?(yes, no) ")
+        if option9 == "":     
+          print("You dont do anything")
+          print("")
+          option9 = "0"
+        option9 = option9[0]
+        if option9 == "Y" or option9 == "y": 
+          if quill == 1 and cup != 1:
+            print("Once you push in the quill, you hear a click.The quill is stuck")
+            print("")
+            quill = 2
+          elif quill != 1 and cup == 1:
+            print("You place the cup on the other side of the scale and as it balences out you hear a click")
+            cup = 2
+            print("")
+          elif quill == 1 and cup == 1:
+            print("You set the cup on the opposite side of the scale, it balences out, and you push the quill into the hole, you hear two clicks")
+            print("")
+            print("")
+            quill = 2
+            cup = 2
+            coin = 1
+        if cup == 2 and quill == 2:
+          print_slow("Then a small door opens on the table. Inside is a coin")
+          print_slow(" with pins on the back and a pentagram engraved front, you take it")
+          coin = 1
+          print("")
+      elif cup != 1 and quill != 1:
+        if quill == 0:
+          print("You have nothing to stick into the hole")
+          print("")
+        elif quill == 2:
+          print("The quill remains stuck in the hole")
+          print("")
+        if cup == 0:
+          print("You have nothing to weigh down the other side of the scale")
+          print("")
+        elif cup == 2:
+          print("The cup sits apon the scale making balence")
+          print("")
+    elif option9 == "n" or option9 == "N":
+      print("You dont do anything")
+      print("")
+    #cup
+    elif option9 == "c" or option9 == "C":
+      print("Whatevers in the cup, it probably dosent taste good")
+      if cup == 0:
+        print("")
+        option9 = input("But you could probably put it to good use, take it?(yes, no) ")
+        print("")
+        if option9 == "":     
+          print("You dont touch anything")
+          print("")
+          option9 = "0"
+        option9 = option9[0]
+        if option9 == "Y" or option9 == "y":
+          print("You take the cup tying not to spill it")
+          print("")
+          cup = 1
+        if option9 == "n" or option9 == "N":
+          print("The cup is left alone")
+          print("")
+      elif cup != 0:
+        print("")
+
+#room 10
+  elif player_loc == room_10:
+    print("In the masterbedroom there is a bookshelf, a table, and a writing desk")
+    print("")
+    option10 = input("What do you interact with?(bookshelf, table, desk, nothing) ")
+    print("")
+    if option10 == "":     
+      print("You dont do anything")
+      print("")
+      option10 = "0"
+    option10 = option10[0]
+    if option10 == "B" or option10 == "b":
+      print("Looking through the bookshelf you find an olddly shaped book, looking through it, you find its a fishing scrapbook")
+      print("")
+      if fishhook == 0:
+        print("")
+        print("Inside is a hook and some string")
+        print("")
+        option10 = input("take it?")
+        print("")
+        if option10 == "":     
+          print("You dont take it")
+          print("")
+          option10 = "0"
+        option10 = option10[0]
+        if option10 == "Y" or option10 == "y":
+          print("You pull out the hook and string from their sleve in the book, trying not to stab yourself, you string the hook")
+          print("")
+          fishhook = 1
+        elif option10 == "N" or option10 == "n":
+          print("You leave the memories alone")
+          print("")
+      elif fishhook == 1 or fishhook == 2:
+        print("")
+      #quill
+    elif option10 == "D" or option10 == "d":
+      if quill == 0:
+        print("On the desk you find a ink pot and a quill")
+        print("")
+        option10 = input("take the quill?")
+        print("")
+        if option10 == "":     
+          print("You dont take it")
+          print("")
+          option10 = "0"
+        option10 = option10[0]
+        if option10 == "Y" or option10 == "y":
+          print("You take the quill from the ink pot")
+          print("")
+          quill = 1
+        elif option10 == "N" or option10 == "n":
+          print("You leave quill alone")
+          print("")
+      elif quill == 1 or quill == 2:
+        print("On the desk sits an ink pot")
+        print("")
+    elif option10 == "T" or option10 == "t":
+      #coin
+      if coin == 0 or coin == 1:
+        print("On the table is a mounted box with an oddly shaped hole seemingly needing something to go into it")
+        print("")
+        if coin == 1:
+          print("luckly you have a pentagram coin that fits perfectly into it")
+          print("")
+          option10 = input("put it in?(yes, no)")    
+          print("")
+          if option10 == "":     
+            print("You dont put it in")
+            print("")
+            option10 = "0"
+          option10 = option10[0]
+          if option10 == "Y" or option10 == "y":
+            print("After sticking the coin into the hole, a door to the left opens, requiring a key")
+            print("")
+            coin = 2
+          elif option10 == "N" or option10 == "n":
+            print("You dont put in the coin")
+            print("")
+        elif coin == 0:
+          print("But you dont have anything that can fit into it")
+          print("")
+      #key part
+      elif coin == 2 and key_box == 1 or key_box == 0:
+        print("The box mounted to the table has its keyhole open on the left with the coin placed in the middle")
+        print("")
+        if key_box == 1:
+          print("You have the key for the box,")
+          print("")
+          option10 = input("Unlock it?")
+          print("")
+          if option10 == "":     
+            print("You dont put it in")
+            print("")
+            option10 = "0"
+          option10 = option10[0]
+          if option10 == "y" or option10 == "Y":
+            print("You push in the key and turn it, another door opens on the right, requiring a 5 digit code")
+            print("")
+            key_box = 2
+          elif option10 == "N" or option10 == "n":
+            print("You dont put in the key")
+            print("")
+        elif key_box == 0:
+          print("You dont have the key for it")
+          print("")
+      #code
+      elif coin == 2 and key_box == 2 and treasure == 0:
+        print("The box has the keyhole unlocked, the coin placed in the middle, and the code waiting to be entered")
+        print("")
+        option10 = input("Do you want to put in the code?")
+        if option10 == "":     
+          print("You dont put it in")
+          print("")
+          option10 = "0"
+        option10 = option10[0]
+        if option10 == "y" or option10 == "Y":
+          option10 = input("What is the code? (#####) ")
+          print("")
+          option10 = int(option10)
+          if option10 == box_code:
+            print_slow("You hear a click as the top of the box opens to reveal a hopefully valuble gold ring with a pentagram of ruby, you take it")
+            treasure = 1
+            print("")
+          elif option10 != box_code:
+            print("...Nothing happened...")
+            print("")
+        elif option10 == "N" or option10 == "n":
+          print("You dont put in the code yet")
+          print("")
+      elif coin == 2 and key_box == 2 and treasure == 1:
+        print("The box in the masterbedroom is open and empty key, coin, and codebar exposed in the front")
+        print("")
+
+#monster movement coding 
+#monster in room 9
+  if monster_loc == room_9:
+    monster_loc = random.choice([room_8,room_10,room_9])#chooses a random room for the monster
+    if monster_loc == room_8:
+      print("You hear some squelchy steps in the bloody room...(8)")#tells the player where the monster is 
+      print("")
+    elif monster_loc == room_10:
+      print("You hear footsteps in the master bedroom...(10)")
+      print("")
+    elif monster_loc == room_9:
+      print("The floorboards creak in the bedroom...(9)")
+      print("")
+
+#monster in room 10
+  elif monster_loc == room_10:
+    monster_loc = random.choice([room_9,room_7,room_10])
+    if monster_loc == room_9:
+      print("You hear a dresser get bumped in the bedroom...(9)")
+      print("")
+    elif monster_loc == room_7:
+      print("You hear footsteps at the stair balcony...(7)")
+      print("")
+    elif monster_loc == 10:
+      print("Theres movement coming from the master bedroom...(10)")
+      print("")
+
+#monster in room 8
+  elif monster_loc == room_8:
+    monster_loc = random.choice([room_9,room_7,room_8])
+    if monster_loc == room_9:
+      print("You hear a dresser get bumped in the bedroom...(9)")
+      print("")
+    elif monster_loc == room_7:
+      print("You hear footsteps at the stair balcony...(7)")
+      print("")
+    elif monster_loc == room_8:
+      print("Theres more squelchy steps in the bloody room...(8)")
+      print("")
+    
+#monster in room 7
+  elif monster_loc == room_7:
+    monster_loc = random.choice([room_8,room_1,room_10,room_1,room_7])
+    if monster_loc == room_10:
+      print("You hear footsteps in the master bedroom...(10)")
+      print("")
+    elif monster_loc == room_8:
+      print("You hear some squelchy steps in the bloody room...(8)")
+      print("")
+    elif monster_loc == room_1:
+      print("You hear footsteps walking down the stairs...(1)")
+      print("")
+    elif monster_loc == room_7:
+      print("There's slow hesitant steps at the stair balcony...(7)")
+      print("")
+
+#monster in room 1
+  elif monster_loc == room_1:
+    monster_loc = random.choice([room_7,room_5,room_3,room_7,room_2,room_6,room_7,room_1])
+    if monster_loc == room_2:
+      print("You hear a chair get bumped in the dining room...(2)")
+      print("")
+    elif monster_loc == room_3:
+      print("You hear hangers rustling in the closet...(3)")
+      print("")
+    elif monster_loc == room_5:
+      print("The faucet turns on, then off in the kitchen...(5)")
+      print("")
+    elif monster_loc == room_6:
+      print("The floor on the living room creaks...(6)")
+      print("")
+    elif monster_loc == room_7:
+      print("There's footsteps going up the stairs...(7)")
+      print("")
+    elif monster_loc == room_1:
+      print("More footsteps echo through the halls...(1)")
+      print("")
+
+#monster in room 2
+  elif monster_loc == room_2:
+    monster_loc = random.choice([room_1,room_2, room_3])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_3:
+      print("You hear hangers rustling in the closet...(3)")
+      print("")
+    elif monster_loc == room_2:
+      print("Theres more footsteps in the dining room...(2)")
+      print("")
+
+#monster in room 3
+  elif monster_loc == room_3:
+    monster_loc = random.choice([room_1,room_2,room_3])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_2:
+      print("You hear a chair get bumped in the dining room...(2)")
+      print("")
+    elif monster_loc == room_3:
+      print("Theres a scraping sound coming from the closet...(3)")
+      print("")
+
+#monster in room 4
+  elif monster_loc == room_4:
+    monster_loc = random.choice([room_5,room_4,room_5])
+    if monster_loc == room_5:
+      print("The faucet turns on, then off in the kitchen...(5)")
+      print("")
+    elif monster_loc == room_4:
+      print("The sound of movement comes from the washroom...(4)")
+      print("")
+
+#monster in room 5
+  elif monster_loc == room_5:
+    monster_loc = random.choice([room_1,room_6,room_4,room_5])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_4:
+      print("You hear the door to the washroom open...(4)")
+      print("")
+    elif monster_loc == room_6:
+      print("The floor on the living room creaks...(6)")
+      print("")
+    elif monster_loc == room_5:
+      print("There's footsteps in the kitchen...(5)")
+      print("")
+
+#monster in room 6
+  elif monster_loc == room_6:
+    monster_loc = random.choice([room_1,room_5,room_6])
+    if monster_loc == room_1:
+      print("Footsteps echo through the main hall...(1)")
+      print("")
+    elif monster_loc == room_5:
+      print("The faucet in the kitchen turns on, then off...(5)")
+      print("")
+    elif monster_loc == room_6:
+      print("There's the crunching of bones coming from the living room...(6)")
+      print("")
+
+#death check 2
+  if player_loc == monster_loc:
+    print_slow("Then you turn around...and its right there...and you are dead!")
+    print("")
+    monster_face()
+    print("The monster found you... GAME OVER!")
+    player_loc = "1"#stat reset
+    monster_loc = "6"
+    cup = 0
+    quill = 0
+    coin = 0
+    knife = 0
+    gear = 0
+    fork = 0
+    cutters = 0
+    swatter = 0
+    treasure = 0
+    log = 0
+    matches = 0
+    fishhook = 0
+    key_backdoor = 0
+    key_locker = 0
+    key_cabinet = 0
+    key_box = 0
+    key_drawer = 0
+    print("")
+    print_slow("You feel sense coming back to you as the loop is inverted and you walk in through the front door...")
+    print("")
+    continue
+  elif player_loc != monster_loc:
+    continue
+
+#exit conditions checked here\/
+  if cutters == 2 and fork == 2 and swatter == 2 and key_backdoor == 2:
+    print_slow("The backdoor is finally fully unlocked, you rush out the door to freedom!")
+    break
+
+#endings
+print("")
+print("")
+print("")
+print("")
+print_slow("You walk out into the forest that is the houses backyard, the rain has died down")
+if treasure == 0:
+  print("")
+  print_slow("You suddenly realize that you forgot the valubles you were looking for... the jewlery or gems that would help you last somewhat longer")
+  print("")
+  print_slow("Like it was all for nothing")
+elif treasure == 1:
+  print("")
+  print_slow("You hold the ring in your palm, this ring, the only thing that can save you from your debt and other problems")
+  print("")
+  print_slow("Unless it has little value, then this was all for nothing")
+print("")
+print_slow("You look behind you at the house, and see the thing looking at you from the boarded-up window. You can see its face in between the boards, ")
+print("")
+print_slow("it looks like ...you... .A chill goes down your spine")
+print("")
+#ending (bad)
+if treasure == 0:
+  print_slow("You start your walk back in the direction of the bar...you think, ")
+  print("")
+  print_slow("hopefully you don't get lost and die....")
+  print("")
+  print(" ___________________________________________________   ")
+  print("/  _____   _   _   _____       _____   _   _   ____ \__")
+  print("  |_###_| |#| |#| |#____|     |#____| |#\ |#| |##_#\   ")
+  print("    |#|   |#|_|#| |##_|       |##_|   |##\|#| |#| |#\  ")
+  print("    |#|   |##_##| |#|___      |#|___  |#|\##| |#|_|#|  ")
+  print("    |_|   |_| |_| |_____|     |_____| |_| \_| |____/   ")
+  print(" ----------------------------------------------------  ")
+  print("                                                       ")
+  #ending (good)
+elif treasure == 1:
+  print_slow("You start your walk back in the direction of the bar...you think. ")
+  print_slow("The silver ruby ring glows red, you put it on your finger to make sure you dont loose it, ")
+  print_slow("but then in a flash of red and black, you realize this adventure is not over...")
+  print("")
+  print("  _________________________________________________                                                  ")
+  print("__/                                                 \___                                             ")
+  print("|    _____   _   _   _____     __▀▄_   _   ▀▄  __▀▄     \___                                         ")
+  print("|   |_###_| |#| |#| |#____|   |#___▀▄ |#\ |#|▀▄##_#▀▄       \___                                     ")
+  print("|     |#|   |#|_|#| |##_|     ▀▄#_|  ▀▄##\|#| |▀▄ |#|           \___                                 ")
+  print("|     |#|   |##_##| |#|___    |#▀▄__  |▀▄\##| |#|▀▄#|               \___                             ")
+  print("|     |_|   |_| |_| |_____|   |___▀▄| |_|▀▄_| |____▀▄                   \_____________________       ")
+  print("|  ----------------------------------------------------                                       \____  ")
+  print("|                     ____    _____    ____   ___   _   _   _   _   ___   _   _    ____            \ ")
+  print("|                    |#__#)  |#____|  /#___| |_#_| |#\ |#| |#\ |#| |_#_| |#\ |#|  /#___|            |")
+  print(" \___                |#|_ \  |##_|   |#|  _   |#|  |##\|#| |##\|#|  |#|  |##\|#| |#|  _             |")
+  print("     \___            |  _)#| |#|___  |#|_|#|  |#|  |#|\##| |#|\##|  |#|  |#|\##| |#|_|#|            |")
+  print("         \___        |____/  |_____|  \____| |___| |_| \_| |_| \_| |___| |_| \_|  \____| [] [] []   |")
+  print("             \___   ------------------------------------------------------------------------------_/ ")
+  print("                 \_______________________________________________________________________________/   ")
+  print("")
+print("")
+print("Made by Jacob, Spencer, Joshua, and Andrew\nThanks for playing")
+print("")
