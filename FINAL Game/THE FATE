@@ -127,7 +127,7 @@ print("")
 print("")
 print("")
 #beginning of player interacion
-print_slow("\nYou open the door and look around. you see the gruff looking bartender(your good freind william), a table full of dangerous looking thugs, and an old man twitching violently in the corner.")
+print_slow("\nYou open the door and look around. you see the gruff looking bartender(your good friend william), a table full of dangerous looking thugs, and an old man twitching violently in the corner.")
 print("")
 
 #NPC interaction base
@@ -1017,7 +1017,7 @@ while True:
         if option4 == "Y" or option4 == "y":
           print("You wash the dirty gear in the water, its free of dirt and grime")
           print("")
-          gear == 2
+          gear = 2
         elif option4 == "n" or option4 == "N":
           print("You dont wash the gear")
       elif gear == 0 or gear == 2 or gear == 3:
