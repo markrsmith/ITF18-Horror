@@ -1,0 +1,58 @@
+Grade for Project:
+
+Game Requirements
+
+Ten Points Each
+
+1.	Must have a defined genre with a plot/narrative/point
+    10
+2.	Create & use at least 3 functions
+    2/3 = 6.66 (this game could have had far fewer lines of code with more strategic functions)
+3.	Make ASCII art (must be original)
+    10
+4.	Have a life point system
+    1 (It seems you die or you don't. Even with the Thugs, the code is not set up to ever increase to 5.)
+5.	Have NPC interaction
+    10
+6.	Use the random variable function
+    10
+7.	Use while-loops
+    10
+8.	Have distinct code blocks
+    10
+9.	Comment above code blocks and elsewhere when necessary
+    9
+10.	Have variable/identifiers that are self-evident (e.g., lifePoints = 20)
+    10
+
+Bonus Features
+Five Points Each
+•	Have more than 3 characters
+  5
+•	Venture through more than 10 screens/sections/rooms
+  5
+•	Include a secret level
+  0
+
+------------------------------------------------------------------------------------------------------
+Total: 96.66 - 10 for being late = 86.66
+
+
+Student who did more or less will have a different grade that what is added up to here
+
+Comments:
+
+You need to have someone edit this for basic syntax and grammar errors. At the very beginning, we have you not capitalized
+at the beginning of a sentence and friend spelled freind. In a text based game, your text really matters.
+
+The dying seems awfully quick. I die walking in the rain from the bus to the house?
+
+Some more gramatical/spelling errors in the house. I see ]ining room(2). Your group should be proofreading this.
+
+I washed the gear but the clock still says it's still too grimey.
+
+After you die, make sure you leave a way to quite the game and not keep looping it.
+
+Overall, the game was definitely playable and could be quite good with some more polishing.
+
+
